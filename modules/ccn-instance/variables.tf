@@ -4,12 +4,6 @@ variable "create" {
   description = "Whether to create CCN resource"
 }
 
-variable "ccn_id" {
-  type        = string
-  default     = ""
-  description = "Existing CCN ID. Used when create=false to attach instances to an existing CCN."
-}
-
 variable "name" {
   type        = string
   default     = ""

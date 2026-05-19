@@ -14,7 +14,7 @@ resource "tencentcloud_ccn" "main" {
 }
 
 locals {
-  ccn_id = var.create ? join("", tencentcloud_ccn.main.*.id) : var.ccn_id
+  ccn_id = var.create ? join("", tencentcloud_ccn.main.*.id) : ""
   bandwidth_limit_region_map = { for region in var.bandwidth_limit_regions: region => region}
 }
 
