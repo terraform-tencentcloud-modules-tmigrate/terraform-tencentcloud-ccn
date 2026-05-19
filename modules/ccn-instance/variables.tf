@@ -66,6 +66,7 @@ variable "route_overlap_flag" {
 variable "region" {
   type        = string
   description = "Region where attached instances are located. Used as default region for attachments."
+  default = ""
 }
 
 variable "vpc_attachments" {
