@@ -10,19 +10,28 @@ variable "region" {
 }
 
 variable "vpc_attachments" {
-  type        = any
+  type = map(object({
+    vpc_id = string
+    region = optional(string, null)
+  }))
   default     = {}
   description = "VPC instances to attach to CCN. Map key is attachment name, value has vpc_id and optional region."
 }
 
 variable "vpn_gateway_attachments" {
-  type        = any
+  type = map(object({
+    vpn_id = string
+    region = optional(string, null)
+  }))
   default     = {}
   description = "VPN gateway instances to attach to CCN. Map key is attachment name, value has vpn_id and optional region."
 }
 
 variable "direct_connect_attachments" {
-  type        = any
+  type = map(object({
+    dc_id   = string
+    region  = optional(string, null)
+  }))
   default     = {}
   description = "Direct connect instances to attach to CCN. Map key is attachment name, value has dc_id and optional region."
 }
