@@ -19,7 +19,7 @@ resource "tencentcloud_ccn_attachment" "vpn_gateway_attachments" {
   ccn_id          = var.ccn_id
   instance_type   = "VPNGW"
   instance_id     = each.value.vpn_id
-  instance_region = var.region
+  instance_region = try(each.value.region, var.region)
 }
 
 resource "tencentcloud_ccn_attachment" "direct_connect_attachments" {
@@ -27,5 +27,5 @@ resource "tencentcloud_ccn_attachment" "direct_connect_attachments" {
   ccn_id          = var.ccn_id
   instance_type   = "DIRECTCONNECT"
   instance_id     = each.value.dc_id
-  instance_region = var.region
+  instance_region = try(each.value.region, var.region)
 }
