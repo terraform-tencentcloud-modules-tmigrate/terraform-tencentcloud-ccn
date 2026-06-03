@@ -36,7 +36,7 @@ variable "bandwidth_limit_type" {
 
 variable "instance_metering_type" {
   type        = string
-  default     = "BANDWIDTH"
+  default     = "TRAFFIC"
   description = "Instance metering type. Valid values: BANDWIDTH, TRAFFIC. Default is BANDWIDTH."
 }
 

@@ -8,6 +8,7 @@ resource "tencentcloud_ccn" "main" {
   qos                  = var.qos
   charge_type          = var.charge_type
   bandwidth_limit_type = var.bandwidth_limit_type
+  instance_metering_type = var.instance_metering_type
   route_ecmp_flag = var.route_ecmp_flag
   route_overlap_flag = var.route_overlap_flag
   tags = var.tags
