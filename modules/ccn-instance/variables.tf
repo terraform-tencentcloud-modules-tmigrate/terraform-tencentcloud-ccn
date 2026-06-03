@@ -34,6 +34,12 @@ variable "bandwidth_limit_type" {
   description = "Speed limit type. Valid values: INTER_REGION_LIMIT, OUTER_REGION_LIMIT. Default is OUTER_REGION_LIMIT."
 }
 
+variable "instance_metering_type" {
+  type        = string
+  default     = "BANDWIDTH"
+  description = "Instance metering type. Valid values: BANDWIDTH, TRAFFIC. Default is BANDWIDTH."
+}
+
 variable "tags" {
   type    = map(string)
   default = {}
